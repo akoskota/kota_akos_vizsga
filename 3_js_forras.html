@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Unit teszt feladat</title>
+	<script type="text/javascript">
+
+function kivalogatParosOtven(tomb) {
+			return tomb.filter(szam => szam > 50 && szam % 2 === 0);
+		}
+		console.log(kivalogatParosOtven([10, 20, 3, 5, 100, 50, 60, 53]));
+
+		function aBetukSzamaDiv() {
+
+			var firstDiv = document.querySelector("body div");
+			var textContent = firstDiv.textContent;
+			var aBetukSzama = (textContent.match(/a/gi) || []).length;
+
+			return aBetukSzama;
+		}
+		console.log(aBetukSzamaDiv());
+
+		function osszeadasFeliras(className, operandus1, operandus2) {
+
+			var szam1 = Number(operandus1);
+			var szam2 = Number(operandus2);
+
+			var osszeg = szam1 + szam2;
+
+			var celElem = document.querySelector(`.${className}`);
+
+			if (celElem) {
+				
+				var paragraph = document.createElement("p");
+
+				paragraph.textContent = `${szam1} + ${szam2} = ${osszeg}`;
+
+				celElem.appendChild(paragraph);
+			} else {
+				console.error(`Nincs "${className}" osztályú elem a DOM-ban.`);
+			}
+		}
+		osszeadasFeliras("eredmeny", "2", 3);
+
+	</script>
+
+	<script src="testBaseUnit.js"></script>
+</head>
+
+<body>
+	<div></div>
+	<div class="eredmeny"></div>
+	<hr>
+	<div id="testResult">
+		<h2>Tesztek</h2>
+	</div>
+</body>
+
+</html>
