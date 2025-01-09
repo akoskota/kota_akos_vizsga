@@ -8,16 +8,16 @@
 	<title>JavaScript Unit teszt feladat</title>
 	<script type="text/javascript">
 
-function kivalogatParosOtven(tomb) {
+		function kivalogatParosOtven(tomb) {
 			return tomb.filter(szam => szam > 50 && szam % 2 === 0);
 		}
 		console.log(kivalogatParosOtven([10, 20, 3, 5, 100, 50, 60, 53]));
 
 		function aBetukSzamaDiv() {
 
-			var firstDiv = document.querySelector("body div");
-			var textContent = firstDiv.textContent;
-			var aBetukSzama = (textContent.match(/a/gi) || []).length;
+			var elsoDiv = document.querySelector('body > div');
+			var szoveg = elsoDiv.textContent;
+			var aBetukSzama = (szoveg.match(/a/gi) || []).length;
 
 			return aBetukSzama;
 		}
@@ -33,7 +33,7 @@ function kivalogatParosOtven(tomb) {
 			var celElem = document.querySelector(`.${className}`);
 
 			if (celElem) {
-				
+
 				var paragraph = document.createElement("p");
 
 				paragraph.textContent = `${szam1} + ${szam2} = ${osszeg}`;
